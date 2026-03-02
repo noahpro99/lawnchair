@@ -350,6 +350,10 @@ class AllAppsSearchInput(context: Context, attrs: AttributeSet?) :
             this,
         )
         input.initialize(appsView)
+        val openFirstResultOnEnter = prefs2.searchOpenFirstResultOnEnter.firstBlocking()
+        input.setOnEditorActionListener { v, actionId, event ->
+            openFirstResultOnEnter && searchBarController.onEditorAction(v, actionId, event)
+        }
     }
 
     override fun resetSearch() {

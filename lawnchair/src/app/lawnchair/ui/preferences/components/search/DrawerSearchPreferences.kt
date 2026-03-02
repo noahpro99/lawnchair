@@ -57,6 +57,12 @@ fun DrawerSearchPreference(
                 )
             }
             Item {
+                SwitchPreference(
+                    adapter = prefs2.searchOpenFirstResultOnEnter.getAdapter(),
+                    label = stringResource(id = R.string.pref_search_open_first_result_on_enter),
+                )
+            }
+            Item {
                 SearchProvider(
                     context = context,
                 )

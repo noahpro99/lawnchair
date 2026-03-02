@@ -441,6 +441,11 @@ class PreferenceManager2 @Inject constructor(
         defaultValue = context.resources.getBoolean(R.bool.config_default_auto_show_keyboard_in_drawer),
     )
 
+    val searchOpenFirstResultOnEnter = preference(
+        key = booleanPreferencesKey(name = "search_open_first_result_on_enter"),
+        defaultValue = context.resources.getBoolean(R.bool.config_default_search_open_first_result_on_enter),
+    )
+
     val workspaceTextColor = preference(
         key = stringPreferencesKey(name = "workspace_text_color"),
         defaultValue = ColorMode.AUTO,
